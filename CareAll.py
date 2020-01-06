@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# loading data to old , young and reviews dictionaries
 old={"alice":[67,4500],
      "kevin":[74,6500],
      "meghan":[65,5200]
@@ -28,8 +29,6 @@ class person:
                   if key == select:
                      sub_menu(Name,key)
 
-
-
            elif purpose == 1:
               young[Name]=[Age]
               old_table()
@@ -45,7 +44,7 @@ class person:
          persons[Name].append(select)
 
 # All the tables are kept in a seperate class 
-class menu():
+class menu(person):
      # A table to display all the old people registered. 
       def old_table():
            print ('--------------------------------------------')
@@ -53,6 +52,7 @@ class menu():
            print ('--------------------------------------------')
            for key in old.keys():
                print (key + '\t\t'+ old[key][0][0]+'\t\t'+old[key][0][1]+'\t\t'+average_rating(key))
+    
      # A table to display all the ypiung people registered.
       def young_table():
            print ('------------------------------------------')
@@ -61,7 +61,8 @@ class menu():
            for key in young.keys():
                print (key + '\t\t'+ str(young[key][0][0])+'\t\t'+str(average_rating(key))
      
-      # To look at a persons ratings and reviews you have to select them by entering their name 
+     
+     # To look at a persons ratings and reviews you have to select them by entering their name 
       def sub_menu(Name,select):
          print ("Averag rating :"+str(average_rating(Name))
          print ("____________________________________")
@@ -76,8 +77,10 @@ class menu():
               save_review(select)
          if a=="no":
               user_info()
+
+                
 # A seperate class for reviews and ratings .
-class review():
+class review(person):
       def save_review(Name):
            print ("please rate your your experience with this person. On a scale from 1 to 10")
            rating    = input ('1 being Worst and 10 being Wonderfull! :')
