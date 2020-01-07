@@ -95,5 +95,5 @@ def save_review(name):
     else:
         reviews[name]+=[rating,review]
     user_info()
-# average rating of the person selected is calculated.
+
 user_info()
