@@ -18,7 +18,7 @@ reviews={"alice":[7,"wonderfull person"],
 # A method to initialise the program , enter name age and other details.
 def user_info():
     name,age = input('Enter your name and age : ').split()
-    purpose = input('Caregive or Taken(Enter 1 or 2 ) : ')
+    purpose = input('Would you like to be a Caregiver or taken care of (Enter 1 or 2 ) : ')
     if int(purpose) == 1:
         young[name]=age
         old_table()
@@ -27,7 +27,7 @@ def user_info():
           if key == select:
             sub_menu(name,key)
     elif int(purpose) == 2:
-        wage = input('How much money can you offer? ')
+        wage = input('How much money can you offer the care giver? ')
         old[name]=[age,wage]
         young_table()
         select=input("Please enter the name of young person you choose: ")
